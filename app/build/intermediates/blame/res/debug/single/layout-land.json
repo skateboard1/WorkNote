@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "W:\\Project\\WorkNote\\app\\build\\intermediates\\res\\merged\\debug\\layout-land\\cotent_list_item_layout.xml",
+        "source": "W:\\Project\\WorkNote\\app\\src\\main\\res\\layout-land\\cotent_list_item_layout.xml"
+    },
+    {
+        "merged": "W:\\Project\\WorkNote\\app\\build\\intermediates\\res\\merged\\debug\\layout-land\\activity_main.xml",
+        "source": "W:\\Project\\WorkNote\\app\\src\\main\\res\\layout-land\\activity_main.xml"
+    },
+    {
+        "merged": "W:\\Project\\WorkNote\\app\\build\\intermediates\\res\\merged\\debug\\layout-land\\item_layout.xml",
+        "source": "W:\\Project\\WorkNote\\app\\src\\main\\res\\layout-land\\item_layout.xml"
+    },
+    {
+        "merged": "W:\\Project\\WorkNote\\app\\build\\intermediates\\res\\merged\\debug\\layout-land\\drawer_header_layout.xml",
+        "source": "W:\\Project\\WorkNote\\app\\src\\main\\res\\layout-land\\drawer_header_layout.xml"
+    },
+    {
+        "merged": "W:\\Project\\WorkNote\\app\\build\\intermediates\\res\\merged\\debug\\layout-land\\first_fragment_layout.xml",
+        "source": "W:\\Project\\WorkNote\\app\\src\\main\\res\\layout-land\\first_fragment_layout.xml"
+    }
+]

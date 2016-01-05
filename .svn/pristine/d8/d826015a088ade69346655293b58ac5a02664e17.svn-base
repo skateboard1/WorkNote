@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config use="true">
+<pages>
+    <page
+        id="FirstPage"
+        className="com.haoxuan.worknote.FirstFragment"/>
+</pages>
+
+
+
+
+
+
+
+</config>

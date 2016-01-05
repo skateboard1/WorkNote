@@ -1,0 +1,3 @@
+W:\Project\WorkNote\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\haoxuan\worknote\activity\MainActivity$1$override.class
+W:\Project\WorkNote\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\haoxuan\worknote\activity\MainActivity$override.class
+W:\Project\WorkNote\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\android\tools\fd\runtime\AppPatchesLoaderImpl.class
