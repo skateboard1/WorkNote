@@ -8,6 +8,7 @@ import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.widget.DrawerLayout;
@@ -20,6 +21,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.LinearLayout;
 
 import com.haoxuan.worknote.R;
 import com.haoxuan.worknote.fragment.FirstFragment;
@@ -29,16 +31,19 @@ public class MainActivity extends AppCompatActivity {
     private Toolbar toolbar;
     private NavigationView navigationView;
     private  ActionBarDrawerToggle toggle;
+    private LinearLayout baseContent;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //getWindow().setFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS, WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS, WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         setContentView(R.layout.activity_main);
+        baseContent= (LinearLayout) findViewById(R.id.base_content);
         drawer = (DrawerLayout) findViewById(R.id.drawer);
         drawer.openDrawer(Gravity.LEFT);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         navigationView = (NavigationView) findViewById(R.id.navigation);
+        navigationView.setCheckedItem(R.id.first);
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(MenuItem item) {
@@ -72,6 +77,8 @@ public class MainActivity extends AppCompatActivity {
             }
         };
         drawer.setDrawerListener(toggle);
+        FragmentManager manager=getSupportFragmentManager();
+        manager.beginTransaction().replace(R.id.content,new FirstFragment()).commit();
     }
 
     @Override
@@ -92,6 +99,11 @@ public class MainActivity extends AppCompatActivity {
         switch(item.getItemId())
         {
             case R.id.sign_in:
+                Intent logInIntent=new Intent(this,SignInActivity.class);
+                startActivity(logInIntent);
+                break;
+            case R.id.save:
+                Snackbar.make(baseContent,R.string.save_tip,Snackbar.LENGTH_SHORT).show();
                 break;
         }
         return super.onOptionsItemSelected(item);

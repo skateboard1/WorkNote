@@ -31,7 +31,7 @@ public class FirstFragment extends NoteBaseFragment {
             data.add("The String number is "+i);
         }
         spinner= (AppCompatSpinner) view.findViewById(R.id.category);
-        spinner.setAdapter(new ArrayAdapter(getActivity(),R.layout.item_layout,R.id.catcontent,new String[]{"item1","item2"}));
+        spinner.setAdapter(new ArrayAdapter(getActivity(),android.R.layout.simple_spinner_item,new String[]{"item1","item2"}));
         contentList= (RecyclerView) view.findViewById(R.id.list);
         contentList.setLayoutManager(new LinearLayoutManager(getActivity(),LinearLayoutManager.HORIZONTAL,false));
         contentList.setAdapter(adapter);

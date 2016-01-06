@@ -9,17 +9,20 @@
     tools:context=".activity.MainActivity">
 
     <LinearLayout
-        android:fitsSystemWindows="true"
+        android:id="@+id/base_content"
+        android:background="?attr/colorPrimaryDark"
+        android:fitsSystemWindows="false"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
         <android.support.v7.widget.Toolbar
-            android:elevation="25dp"
+            android:elevation="4dp"
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@android:color/holo_purple"/>
+            android:background="?attr/colorPrimary"/>
         <FrameLayout
+            android:background="@android:color/white"
             android:id="@+id/content"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>

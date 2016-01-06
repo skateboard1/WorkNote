@@ -9,7 +9,7 @@
     card_view:cardElevation="3dp"
     android:layout_gravity="center"
     android:gravity="center"
-    android:layout_margin="3dp">
+    android:layout_margin="2dp">
  <TextView
      android:textSize="15sp"
      android:id="@+id/description"
