@@ -5,6 +5,7 @@
     <!--common-->
     <string name="save">存储</string>
     <string name="save_tip">已经存储信息</string>
+    <string name="loading_dialog">加载中</string>
 
 
     <!--SignInActivity-->

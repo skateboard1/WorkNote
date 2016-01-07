@@ -1,5 +1,6 @@
 package com.haoxuan.worknote.fragment;
 
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -7,16 +8,30 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+import com.haoxuan.worknote.fragment.dialog.ProgressDialogFragment;
+
 /**
  * Created by skateboard on 2016/1/4.
  */
 public abstract class NoteBaseFragment extends Fragment {
 
+    protected abstract void loadingFinished();
     protected abstract int getLayoutId();
+    private ProgressDialogFragment myProgressDialog;
+    private RequestQueue queue;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        myProgressDialog=new ProgressDialogFragment();
+        myProgressDialog.show(getChildFragmentManager(),"loading");
+        queue= Volley.newRequestQueue(getActivity());
 
     }
 
@@ -33,7 +48,42 @@ public abstract class NoteBaseFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        System.out.println("base activitycreate");
+        StringRequest request=new StringRequest(Request.Method.GET, "http://blog.csdn.net/guolin_blog/article/details/17482095", new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                loadingFinished();
+                myProgressDialog.dismiss();
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+            }
+        });
+        queue.add(request);
+       // new NetWork().execute();
+
+    }
+
+    private class NetWork extends AsyncTask
+    {
+
+        @Override
+        protected Object doInBackground(Object[] params) {
+            try {
+                Thread.sleep(3000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Object o) {
+            super.onPostExecute(o);
+            loadingFinished();
+            myProgressDialog.dismiss();
+        }
     }
 
 }
