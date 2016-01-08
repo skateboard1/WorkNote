@@ -31,6 +31,7 @@ public abstract class NoteBaseFragment extends Fragment {
         super.onCreate(savedInstanceState);
         myProgressDialog=new ProgressDialogFragment();
         myProgressDialog.show(getChildFragmentManager(),"loading");
+        myProgressDialog.setCancelable(false);
         queue= Volley.newRequestQueue(getActivity());
 
     }
@@ -57,7 +58,7 @@ public abstract class NoteBaseFragment extends Fragment {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-
+                myProgressDialog.dismiss();
             }
         });
         queue.add(request);

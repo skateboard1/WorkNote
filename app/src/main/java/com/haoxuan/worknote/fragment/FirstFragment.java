@@ -14,6 +14,7 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import com.haoxuan.worknote.R;
+import com.haoxuan.worknote.fragment.dialog.CardDetailFragment;
 
 import java.util.ArrayList;
 
@@ -65,6 +66,8 @@ public class FirstFragment extends NoteBaseFragment {
             ((Holder)(holder)).card.setOnLongClickListener(new View.OnLongClickListener() {
                 @Override
                 public boolean onLongClick(View v) {
+                    CardDetailFragment cardDetail=new CardDetailFragment();
+                    cardDetail.show(getChildFragmentManager(),"card_detail");
                     return true;
                 }
             });
