@@ -1,0 +1,177 @@
+﻿
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Your branch is up-to-date with 'origin/master'.
+#
+# Changes to be committed:
+#	modified:   java/com/haoxuan/worknote/activity/MainActivity.java
+#	new file:   java/com/haoxuan/worknote/activity/SignInActivity.java
+#	modified:   java/com/haoxuan/worknote/fragment/FirstFragment.java
+#	modified:   res/layout-land/activity_main.xml
+#	new file:   res/layout-land/activity_signin.xml
+#	modified:   res/layout-land/cotent_list_item_layout.xml
+#	modified:   res/layout-land/drawer_header_layout.xml
+#	modified:   res/layout-land/first_fragment_layout.xml
+#	modified:   res/layout-land/item_layout.xml
+#	modified:   res/menu/main_menu.xml
+#	new file:   res/values-v21/styles.xml
+#	modified:   res/values/dimens.xml
+#	modified:   res/values/strings.xml
+#	modified:   res/values/styles.xml
+#
+# Changes not staged for commit:
+#	modified:   ../../../.gradle/2.8/taskArtifacts/cache.properties.lock
+#	modified:   ../../../.gradle/2.8/taskArtifacts/fileHashes.bin
+#	modified:   ../../../.gradle/2.8/taskArtifacts/fileSnapshots.bin
+#	modified:   ../../../.gradle/2.8/taskArtifacts/taskArtifacts.bin
+#	modified:   ../../../.idea/workspace.xml
+#	modified:   ../../../.svn/wc.db
+#	modified:   ../../build/generated/source/r/debug/android/support/design/R.java
+#	modified:   ../../build/generated/source/r/debug/android/support/v7/appcompat/R.java
+#	modified:   ../../build/generated/source/r/debug/android/support/v7/cardview/R.java
+#	modified:   ../../build/generated/source/r/debug/android/support/v7/recyclerview/R.java
+#	modified:   ../../build/generated/source/r/debug/com/haoxuan/worknote/R.java
+#	modified:   ../../build/intermediates/blame/res/debug/multi/values.json
+#	modified:   ../../build/intermediates/blame/res/debug/single/layout-land.json
+#	modified:   ../../build/intermediates/classes/debug/android/support/design/R$dimen.class
+#	modified:   ../../build/intermediates/classes/debug/android/support/design/R$id.class
+#	modified:   ../../build/intermediates/classes/debug/android/support/design/R$layout.class
+#	modified:   ../../build/intermediates/classes/debug/android/support/design/R$style.class
+#	modified:   ../../build/intermediates/classes/debug/android/support/v7/appcompat/R$dimen.class
+#	modified:   ../../build/intermediates/classes/debug/android/support/v7/appcompat/R$id.class
+#	modified:   ../../build/intermediates/classes/debug/android/support/v7/appcompat/R$layout.class
+#	modified:   ../../build/intermediates/classes/debug/android/support/v7/appcompat/R$style.class
+#	modified:   ../../build/intermediates/classes/debug/android/support/v7/cardview/R$style.class
+#	modified:   ../../build/intermediates/classes/debug/android/support/v7/recyclerview/R$dimen.class
+#	modified:   ../../build/intermediates/classes/debug/com/haoxuan/worknote/R$dimen.class
+#	modified:   ../../build/intermediates/classes/debug/com/haoxuan/worknote/R$drawable.class
+#	modified:   ../../build/intermediates/classes/debug/com/haoxuan/worknote/R$id.class
+#	modified:   ../../build/intermediates/classes/debug/com/haoxuan/worknote/R$integer.class
+#	modified:   ../../build/intermediates/classes/debug/com/haoxuan/worknote/R$layout.class
+#	modified:   ../../build/intermediates/classes/debug/com/haoxuan/worknote/R$menu.class
+#	modified:   ../../build/intermediates/classes/debug/com/haoxuan/worknote/R$mipmap.class
+#	modified:   ../../build/intermediates/classes/debug/com/haoxuan/worknote/R$string.class
+#	modified:   ../../build/intermediates/classes/debug/com/haoxuan/worknote/R$style.class
+#	modified:   ../../build/intermediates/classes/debug/com/haoxuan/worknote/R$styleable.class
+#	modified:   ../../build/intermediates/classes/debug/com/haoxuan/worknote/R.class
+#	modified:   ../../build/intermediates/classes/debug/com/haoxuan/worknote/activity/MainActivity$1.class
+#	modified:   ../../build/intermediates/classes/debug/com/haoxuan/worknote/activity/MainActivity$2.class
+#	modified:   ../../build/intermediates/classes/debug/com/haoxuan/worknote/activity/MainActivity.class
+#	modified:   ../../build/intermediates/classes/debug/com/haoxuan/worknote/fragment/FirstFragment$1$Holder.class
+#	modified:   ../../build/intermediates/classes/debug/com/haoxuan/worknote/fragment/FirstFragment$1.class
+#	modified:   ../../build/intermediates/classes/debug/com/haoxuan/worknote/fragment/FirstFragment.class
+#	modified:   ../../build/intermediates/incremental-classes/debug/classes.jar
+#	modified:   ../../build/intermediates/incremental-verifier/debug/android/support/design/R$dimen.class
+#	modified:   ../../build/intermediates/incremental-verifier/debug/android/support/design/R$id.class
+#	modified:   ../../build/intermediates/incremental-verifier/debug/android/support/design/R$layout.class
+#	modified:   ../../build/intermediates/incremental-verifier/debug/android/support/design/R$style.class
+#	modified:   ../../build/intermediates/incremental-verifier/debug/android/support/v7/appcompat/R$dimen.class
+#	modified:   ../../build/intermediates/incremental-verifier/debug/android/support/v7/appcompat/R$id.class
+#	modified:   ../../build/intermediates/incremental-verifier/debug/android/support/v7/appcompat/R$layout.class
+#	modified:   ../../build/intermediates/incremental-verifier/debug/android/support/v7/appcompat/R$style.class
+#	modified:   ../../build/intermediates/incremental-verifier/debug/android/support/v7/cardview/R$style.class
+#	modified:   ../../build/intermediates/incremental-verifier/debug/android/support/v7/recyclerview/R$dimen.class
+#	modified:   ../../build/intermediates/incremental-verifier/debug/com/haoxuan/worknote/R$dimen.class
+#	modified:   ../../build/intermediates/incremental-verifier/debug/com/haoxuan/worknote/R$drawable.class
+#	modified:   ../../build/intermediates/incremental-verifier/debug/com/haoxuan/worknote/R$id.class
+#	modified:   ../../build/intermediates/incremental-verifier/debug/com/haoxuan/worknote/R$integer.class
+#	modified:   ../../build/intermediates/incremental-verifier/debug/com/haoxuan/worknote/R$layout.class
+#	modified:   ../../build/intermediates/incremental-verifier/debug/com/haoxuan/worknote/R$menu.class
+#	modified:   ../../build/intermediates/incremental-verifier/debug/com/haoxuan/worknote/R$mipmap.class
+#	modified:   ../../build/intermediates/incremental-verifier/debug/com/haoxuan/worknote/R$string.class
+#	modified:   ../../build/intermediates/incremental-verifier/debug/com/haoxuan/worknote/R$style.class
+#	modified:   ../../build/intermediates/incremental-verifier/debug/com/haoxuan/worknote/R$styleable.class
+#	modified:   ../../build/intermediates/incremental-verifier/debug/com/haoxuan/worknote/R.class
+#	modified:   ../../build/intermediates/incremental-verifier/debug/com/haoxuan/worknote/activity/MainActivity$1.class
+#	modified:   ../../build/intermediates/incremental-verifier/debug/com/haoxuan/worknote/activity/MainActivity$2.class
+#	modified:   ../../build/intermediates/incremental-verifier/debug/com/haoxuan/worknote/activity/MainActivity.class
+#	modified:   ../../build/intermediates/incremental-verifier/debug/com/haoxuan/worknote/fragment/FirstFragment$1$Holder.class
+#	modified:   ../../build/intermediates/incremental-verifier/debug/com/haoxuan/worknote/fragment/FirstFragment$1.class
+#	modified:   ../../build/intermediates/incremental-verifier/debug/com/haoxuan/worknote/fragment/FirstFragment.class
+#	modified:   ../../build/intermediates/incremental/mergeDebugResources/merger.xml
+#	modified:   ../../build/intermediates/instant-run-support/debug/reload-changes.txt
+#	modified:   ../../build/intermediates/manifests/full/debug/AndroidManifest.xml
+#	modified:   ../../build/intermediates/pre-dexed/debug/classes_70bdf9ebdc2228694f34a3a7260072337eb25a44.jar
+#	modified:   ../../build/intermediates/pre-dexed/debug/main_0fa81549146c1ef7a164df43edaf86e31cc9a377.jar
+#	modified:   ../../build/intermediates/res/merged/debug/layout-land/activity_main.xml
+#	modified:   ../../build/intermediates/res/merged/debug/layout-land/cotent_list_item_layout.xml
+#	modified:   ../../build/intermediates/res/merged/debug/layout-land/drawer_header_layout.xml
+#	modified:   ../../build/intermediates/res/merged/debug/layout-land/first_fragment_layout.xml
+#	modified:   ../../build/intermediates/res/merged/debug/layout-land/item_layout.xml
+#	modified:   ../../build/intermediates/res/merged/debug/menu/main_menu.xml
+#	modified:   ../../build/intermediates/res/merged/debug/values/values.xml
+#	modified:   ../../build/intermediates/res/resources-debug.ap_
+#	modified:   ../../build/intermediates/restart-dex/debug/build-info.xml
+#	deleted:    ../../build/intermediates/restart-dex/debug/classes.dex
+#	modified:   ../../build/intermediates/restart-dex/debug/classes.jar
+#	modified:   ../../build/intermediates/symbols/debug/R.txt
+#	modified:   ../../build/intermediates/transforms/dex/debug/folders/1000/1f/main/classes.dex
+#	modified:   ../../build/intermediates/transforms/instantRun/debug/folders/1/5/main/android/support/design/R$dimen.class
+#	modified:   ../../build/intermediates/transforms/instantRun/debug/folders/1/5/main/android/support/design/R$id.class
+#	modified:   ../../build/intermediates/transforms/instantRun/debug/folders/1/5/main/android/support/design/R$layout.class
+#	modified:   ../../build/intermediates/transforms/instantRun/debug/folders/1/5/main/android/support/design/R$style.class
+#	modified:   ../../build/intermediates/transforms/instantRun/debug/folders/1/5/main/android/support/v7/appcompat/R$dimen.class
+#	modified:   ../../build/intermediates/transforms/instantRun/debug/folders/1/5/main/android/support/v7/appcompat/R$id.class
+#	modified:   ../../build/intermediates/transforms/instantRun/debug/folders/1/5/main/android/support/v7/appcompat/R$layout.class
+#	modified:   ../../build/intermediates/transforms/instantRun/debug/folders/1/5/main/android/support/v7/appcompat/R$style.class
+#	modified:   ../../build/intermediates/transforms/instantRun/debug/folders/1/5/main/android/support/v7/cardview/R$style.class
+#	modified:   ../../build/intermediates/transforms/instantRun/debug/folders/1/5/main/android/support/v7/recyclerview/R$dimen.class
+#	modified:   ../../build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/haoxuan/worknote/R$dimen.class
+#	modified:   ../../build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/haoxuan/worknote/R$drawable.class
+#	modified:   ../../build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/haoxuan/worknote/R$id.class
+#	modified:   ../../build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/haoxuan/worknote/R$integer.class
+#	modified:   ../../build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/haoxuan/worknote/R$layout.class
+#	modified:   ../../build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/haoxuan/worknote/R$menu.class
+#	modified:   ../../build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/haoxuan/worknote/R$mipmap.class
+#	modified:   ../../build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/haoxuan/worknote/R$string.class
+#	modified:   ../../build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/haoxuan/worknote/R$style.class
+#	modified:   ../../build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/haoxuan/worknote/R$styleable.class
+#	modified:   ../../build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/haoxuan/worknote/R.class
+#	modified:   ../../build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/haoxuan/worknote/activity/MainActivity$1.class
+#	modified:   ../../build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/haoxuan/worknote/activity/MainActivity$2.class
+#	modified:   ../../build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/haoxuan/worknote/activity/MainActivity.class
+#	modified:   ../../build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/haoxuan/worknote/fragment/FirstFragment$1$Holder.class
+#	modified:   ../../build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/haoxuan/worknote/fragment/FirstFragment$1.class
+#	modified:   ../../build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/haoxuan/worknote/fragment/FirstFragment.class
+#	modified:   ../../build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/android/support/design/R$dimen$override.class
+#	modified:   ../../build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/android/support/design/R$id$override.class
+#	modified:   ../../build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/android/support/design/R$layout$override.class
+#	modified:   ../../build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/android/support/design/R$style$override.class
+#	modified:   ../../build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/android/support/v7/appcompat/R$dimen$override.class
+#	modified:   ../../build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/android/support/v7/appcompat/R$id$override.class
+#	modified:   ../../build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/android/support/v7/appcompat/R$layout$override.class
+#	modified:   ../../build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/android/support/v7/appcompat/R$style$override.class
+#	modified:   ../../build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/android/support/v7/recyclerview/R$dimen$override.class
+#	modified:   ../../build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/com/android/tools/fd/runtime/AppPatchesLoaderImpl.class
+#	modified:   ../../build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/com/haoxuan/worknote/R$dimen$override.class
+#	modified:   ../../build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/com/haoxuan/worknote/R$id$override.class
+#	modified:   ../../build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/com/haoxuan/worknote/R$layout$override.class
+#	modified:   ../../build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/com/haoxuan/worknote/R$override.class
+#	modified:   ../../build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/com/haoxuan/worknote/R$string$override.class
+#	modified:   ../../build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/com/haoxuan/worknote/R$style$override.class
+#	modified:   ../../build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/com/haoxuan/worknote/activity/MainActivity$1$override.class
+#	modified:   ../../build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/com/haoxuan/worknote/activity/MainActivity$override.class
+#	modified:   ../../build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/com/haoxuan/worknote/fragment/FirstFragment$1$Holder$override.class
+#	modified:   ../../build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/com/haoxuan/worknote/fragment/FirstFragment$1$override.class
+#	modified:   ../../build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/com/haoxuan/worknote/fragment/FirstFragment$override.class
+#	modified:   ../../build/outputs/apk/app-debug-unaligned.apk
+#	modified:   ../../build/outputs/apk/app-debug.apk
+#	modified:   ../../build/outputs/logs/manifest-merger-debug-report.txt
+#	modified:   AndroidManifest.xml
+#	modified:   ../../../build/intermediates/dex-cache/cache.xml
+#
+# Untracked files:
+#	../../../.idea/inspectionProfiles/
+#	../../build/intermediates/classes/debug/com/haoxuan/worknote/activity/SignInActivity$1.class
+#	../../build/intermediates/classes/debug/com/haoxuan/worknote/activity/SignInActivity.class
+#	../../build/intermediates/incremental-verifier/debug/com/haoxuan/worknote/activity/SignInActivity$1.class
+#	../../build/intermediates/incremental-verifier/debug/com/haoxuan/worknote/activity/SignInActivity.class
+#	../../build/intermediates/res/merged/debug/layout-land/activity_signin.xml
+#	../../build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/haoxuan/worknote/activity/SignInActivity$1.class
+#	../../build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/haoxuan/worknote/activity/SignInActivity.class
+#	../../build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/android/support/v7/cardview/
+#	../../build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/com/haoxuan/worknote/activity/MainActivity$2$override.class
+#	../../build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/com/haoxuan/worknote/activity/SignInActivity$override.class
+#
+
