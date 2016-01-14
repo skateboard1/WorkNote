@@ -1,5 +1,6 @@
 package com.haoxuan.worknote.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
@@ -14,6 +15,7 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import com.haoxuan.worknote.R;
+import com.haoxuan.worknote.activity.ArticleDetailActivity;
 import com.haoxuan.worknote.fragment.dialog.CardDetailFragment;
 
 import java.util.ArrayList;
@@ -22,7 +24,6 @@ import java.util.ArrayList;
  * Created by skateboard on 2016/1/4.
  */
 public class FirstFragment extends NoteBaseFragment {
-   private AppCompatSpinner spinner;
    private RecyclerView contentList;
    private  ArrayList<String> data;
 
@@ -33,8 +34,6 @@ public class FirstFragment extends NoteBaseFragment {
         {
             data.add("The String number is "+i);
         }
-        spinner= (AppCompatSpinner) view.findViewById(R.id.category);
-        spinner.setAdapter(new ArrayAdapter(getActivity(),android.R.layout.simple_spinner_item,new String[]{"item1","item2"}));
         contentList= (RecyclerView) view.findViewById(R.id.list);
         contentList.setLayoutManager(new LinearLayoutManager(getActivity(),LinearLayoutManager.HORIZONTAL,false));
         contentList.setAdapter(adapter);
@@ -63,12 +62,11 @@ public class FirstFragment extends NoteBaseFragment {
         @Override
         public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
             ((Holder)(holder)).description.setText(data.get(position));
-            ((Holder)(holder)).card.setOnLongClickListener(new View.OnLongClickListener() {
+            ((Holder)(holder)).card.setOnClickListener(new View.OnClickListener() {
                 @Override
-                public boolean onLongClick(View v) {
-                    CardDetailFragment cardDetail=new CardDetailFragment();
-                    cardDetail.show(getChildFragmentManager(),"card_detail");
-                    return true;
+                public void onClick(View v) {
+                    Intent arDetail=new Intent(getActivity(),ArticleDetailActivity.class);
+                    startActivity(arDetail);
                 }
             });
         }

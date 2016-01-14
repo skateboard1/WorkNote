@@ -29,10 +29,10 @@ public abstract class NoteBaseFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        myProgressDialog=new ProgressDialogFragment();
-        myProgressDialog.show(getChildFragmentManager(),"loading");
-        myProgressDialog.setCancelable(false);
-        queue= Volley.newRequestQueue(getActivity());
+//        myProgressDialog=new ProgressDialogFragment();
+//        myProgressDialog.show(getChildFragmentManager(),"loading");
+//        myProgressDialog.setCancelable(false);
+//        queue= Volley.newRequestQueue(getActivity());
 
     }
 
@@ -49,42 +49,24 @@ public abstract class NoteBaseFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        StringRequest request=new StringRequest(Request.Method.GET, "http://blog.csdn.net/guolin_blog/article/details/17482095", new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                loadingFinished();
-                myProgressDialog.dismiss();
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                myProgressDialog.dismiss();
-            }
-        });
-        queue.add(request);
-       // new NetWork().execute();
+        loadingFinished();
+//        StringRequest request=new StringRequest(Request.Method.GET, "http://blog.csdn.net/guolin_blog/article/details/17482095", new Response.Listener<String>() {
+//            @Override
+//            public void onResponse(String response) {
+//                loadingFinished();
+//                myProgressDialog.dismiss();
+//            }
+//        }, new Response.ErrorListener() {
+//            @Override
+//            public void onErrorResponse(VolleyError error) {
+//                myProgressDialog.dismiss();
+//            }
+//        });
+//        queue.add(request);
+
 
     }
 
-    private class NetWork extends AsyncTask
-    {
 
-        @Override
-        protected Object doInBackground(Object[] params) {
-            try {
-                Thread.sleep(3000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            return null;
-        }
-
-        @Override
-        protected void onPostExecute(Object o) {
-            super.onPostExecute(o);
-            loadingFinished();
-            myProgressDialog.dismiss();
-        }
-    }
 
 }
