@@ -39,7 +39,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         baseContent= (LinearLayout) findViewById(R.id.base_content);
         drawer = (DrawerLayout) findViewById(R.id.drawer);
-        drawer.openDrawer(Gravity.LEFT);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         navigationView = (NavigationView) findViewById(R.id.navigation);

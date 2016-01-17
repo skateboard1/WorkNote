@@ -22,6 +22,8 @@
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"/>
         <FrameLayout
+            android:foregroundGravity="center"
+            android:layout_gravity="center"
             android:background="@android:color/white"
             android:id="@+id/content"
             android:layout_width="match_parent"
