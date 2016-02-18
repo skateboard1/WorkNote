@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/home/skateboard/WorkNote/app/build/intermediates/res/merged/debug/menu/drawer_menu.xml",
+        "source": "/home/skateboard/WorkNote/app/src/main/res/menu/drawer_menu.xml"
+    },
+    {
+        "merged": "/home/skateboard/WorkNote/app/build/intermediates/res/merged/debug/menu/main_menu.xml",
+        "source": "/home/skateboard/WorkNote/app/src/main/res/menu/main_menu.xml"
+    }
+]

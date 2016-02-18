@@ -10,12 +10,8 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+        <activity android:name=".activity.MainActivity"
+                  android:screenOrientation="portrait">
         </activity>
         <activity
             android:name=".activity.SignInActivity"
@@ -23,6 +19,16 @@
             android:theme="@style/AppTheme" />
         <activity android:name=".activity.ArticleDetailActivity"
                   android:parentActivityName=".activity.MainActivity">
+
+        </activity>
+
+        <activity android:name="com.haoxuan.worknote.activity.SplashActivity"
+                  android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
 
         </activity>
     </application>

@@ -7,9 +7,15 @@
     <string name="save_tip">已经存储信息</string>
     <string name="loading_dialog">加载中</string>
     <string name="detail">明细</string>
+    <string name="button_confirm">确认</string>
 
     <!--SignInActivity-->
     <string name="user_name">用户名</string>
     <string name="user_password">密码</string>
     <string name="sign_in">登陆</string>
+
+    <!--SocketMessage-->
+    <string name="server_error">服务器异常</string>
+    <string name="network_error_title">网络异常</string>
+    <string name="network_error_message">请确保你的设备连接到网络</string>
 </resources>

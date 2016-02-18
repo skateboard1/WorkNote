@@ -8,12 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
+
 import com.haoxuan.worknote.fragment.dialog.ProgressDialogFragment;
 
 /**
@@ -24,7 +19,6 @@ public abstract class NoteBaseFragment extends Fragment {
     protected abstract void loadingFinished();
     protected abstract int getLayoutId();
     private ProgressDialogFragment myProgressDialog;
-    private RequestQueue queue;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config >
+    <pages>
+        <page
+            id="FirstPage"
+            className="com.haoxuan.worknote.fragment.FirstFragment"/>
+        <page
+            id="SecondPage"
+            className="com.haoxuan.worknote.fragment.SecondFragment"/>
+    </pages>
+
+</config>
