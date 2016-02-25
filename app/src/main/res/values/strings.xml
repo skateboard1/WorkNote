@@ -18,4 +18,14 @@
     <string name="server_error">服务器异常</string>
     <string name="network_error_title">网络异常</string>
     <string name="network_error_message">请确保你的设备连接到网络</string>
+
+
+    <!--menu-->
+    <string name="tip_note_has_created">该笔记本已经创建</string>
+    <string name="confirm_add_note">创建</string>
+    <string name="tip_note_name">笔记本名称</string>
+    <string name="add_note_menu">新建笔记本</string>
+    <!--IconFont-->
+    <string name="iconfont_add_note">&#xe611;</string>
+    <string name="iconfont_confirm_add_note">&#xe692;</string>
 </resources>

@@ -20,6 +20,7 @@ import java.io.IOException;
 import java.util.HashMap;
 
 import network.SocketTask;
+import network.SocketTask.Method;
 
 /**
  * Created by skateboard on 16-2-6.
@@ -28,23 +29,22 @@ public class SplashActivity extends BaseActivity {
 
     private HashMap<String, Page> pages;
     private Handler handler;
-
+    private SocketTask mSocketTask;
     @Override
-    protected void onActivityCreateView() {
-        super.onActivityCreateView();
+    protected void onCreate(Bundle bundle) {
+        super.onCreate(bundle);
         setContentView(R.layout.activity_splash);
-        initConfig();
-
+        initMenu();
     }
 
-    private void initConfig() {
+    private void initMenu() {
+        mSocketTask=initSocket();
         handler=new Handler();
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                setConfig();
-                mSocketTask.setTitle(K.GET_MENU);
-                mSocketTask.execute();
+//                setConfig();
+                mSocketTask.sendRequest(Method.SGET,K.GET_MENU);
             }
         },1500);
 

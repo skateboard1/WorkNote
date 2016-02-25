@@ -35,5 +35,5 @@
         android:id="@+id/menu_list"
         android:layout_width="380dp"
         android:layout_height="match_parent"
-        android:layout_gravity="left" />
+        android:layout_gravity="start" />
 </android.support.v4.widget.DrawerLayout>

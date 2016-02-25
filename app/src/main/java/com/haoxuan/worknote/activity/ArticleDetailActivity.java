@@ -10,8 +10,8 @@ public class ArticleDetailActivity extends BaseActivity {
     private Toolbar toolbar;
     private EditText content;
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    protected void onCreate(Bundle bundle) {
+        super.onCreate(bundle);
         setContentView(R.layout.activity_article_detail);
         initView();
         initData();
@@ -27,7 +27,7 @@ public class ArticleDetailActivity extends BaseActivity {
 
     private void initData()
     {
-        mSocketTask.execute();
+//        mSocketTask.execute();
     }
 
 
@@ -43,30 +43,4 @@ public class ArticleDetailActivity extends BaseActivity {
         content.setText(result);
 
     }
-
-//    private class MyTask extends AsyncTask<String,Integer,String>
-//    {
-//
-//
-//        @Override
-//        protected String doInBackground(String[] params) {
-//            String text=null;
-//            try {
-//                Socket socket=new Socket("192.168.1.105",8080);
-//                BufferedReader reader=new BufferedReader(new InputStreamReader(socket.getInputStream()));
-//                text=reader.readLine();
-//                socket.close();
-//
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
-//            return text;
-//        }
-//
-//        @Override
-//        protected void onPostExecute(String o) {
-//            super.onPostExecute(o);
-//            Toast.makeText(ArticleDetailActivity.this,o, Toast.LENGTH_SHORT).show();
-//        }
-//    }
 }

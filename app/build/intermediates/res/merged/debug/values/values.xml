@@ -277,11 +277,15 @@
     <string name="abc_shareactionprovider_share_with">Share with</string>
     <string name="abc_shareactionprovider_share_with_application">Share with %s</string>
     <string name="abc_toolbar_collapse_description">Collapse</string>
+    <string name="add_note_menu">新建笔记本</string>
     <string name="app_name">WorkNote</string>
     <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
     <string name="button_confirm">确认</string>
     <string name="character_counter_pattern" translatable="false">%1$d / %2$d</string>
+    <string name="confirm_add_note">创建</string>
     <string name="detail">明细</string>
+    <string name="iconfont_add_note"></string>
+    <string name="iconfont_confirm_add_note"></string>
     <string name="loading_dialog">加载中</string>
     <string name="network_error_message">请确保你的设备连接到网络</string>
     <string name="network_error_title">网络异常</string>
@@ -290,6 +294,8 @@
     <string name="server_error">服务器异常</string>
     <string name="sign_in">登陆</string>
     <string name="status_bar_notification_info_overflow">999+</string>
+    <string name="tip_note_has_created">该笔记本已经创建</string>
+    <string name="tip_note_name">笔记本名称</string>
     <string name="title_activity_sign_in">SignInActivity</string>
     <string name="user_name">用户名</string>
     <string name="user_password">密码</string>

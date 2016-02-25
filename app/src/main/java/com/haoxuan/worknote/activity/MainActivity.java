@@ -2,15 +2,13 @@ package com.haoxuan.worknote.activity;
 
 
 import android.content.Intent;
-import android.support.annotation.Nullable;
+import android.graphics.Typeface;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -18,55 +16,70 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.haoxuan.worknote.R;
 import com.haoxuan.worknote.fragment.FirstFragment;
 import com.haoxuan.worknote.bean.menu.*;
+import com.haoxuan.worknote.fragment.dialog.AddNoteDialogFragment;
 import com.haoxuan.worknote.widget.HeadRecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;
 
 
-public class MainActivity extends DrawerActivity {
-    private DrawerLayout drawer;
-    private Toolbar toolbar;
+public class MainActivity extends DrawerActivity implements AddNoteDialogFragment.OnCreateNoteFinishedListener {
+
     private HeadRecyclerView menuList;
-    private ActionBarDrawerToggle toggle;
-    private LinearLayout baseContent;
-    private ArrayList menuData;
-//    private ArrayList<com.haoxuan.worknote.bean.menu.MenuItem> menus=new ArrayList<com.haoxuan.worknote.bean.menu.MenuItem>();
+    private ArrayList<MenuDetail> menuData;
+    private LinearLayout addNoteView;
+
 
     @Override
-    protected void onActivityCreateView() {
-        super.onActivityCreateView();
+    protected void onCreate(Bundle bundle) {
+        super.onCreate(bundle);
         initMenuData();
         setContentView(R.layout.activity_main);
-        baseContent = (LinearLayout) findViewById(R.id.base_content);
-        drawer = (DrawerLayout) findViewById(R.id.drawer);
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        initView();
+    }
+
+    private void initView() {
+
+        initMenuList();
+        showFragment(null);
+    }
+
+    private void showFragment(MenuDetail menuDetail) {
+        FragmentManager manager = getSupportFragmentManager();
+        manager.beginTransaction().replace(R.id.content, new FirstFragment()).commit();
+    }
+
+
+    private void initMenuList() {
         menuList = (HeadRecyclerView) findViewById(R.id.menu_list);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         menuList.setLayoutManager(layoutManager);
-        menuList.addHeadView(R.layout.drawer_header_layout);
+        View headView = LayoutInflater.from(this).inflate(R.layout.drawer_header_layout, menuList, false);
+        final TextView addNote = (TextView) headView.findViewById(R.id.add_note);
+        addNote.setTypeface(Typeface.createFromAsset(getAssets(), "iconfont/addnote.ttf"));
+        addNoteView = (LinearLayout) headView.findViewById(R.id.add_note_menu);
+        addNoteView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showAddNoteMenu();
+                Toast.makeText(MainActivity.this, "click add", Toast.LENGTH_SHORT).show();
+            }
+        });
+        menuList.addHeadView(headView);
         menuList.setAdapter(new MenuAdapter(menuData));
-        toggle = new ActionBarDrawerToggle(this, drawer, toolbar, 0, 0) {
-            @Override
-            public void onDrawerOpened(View drawerView) {
-                super.onDrawerOpened(drawerView);
-                toolbar.setTitle("OPEN");
-            }
+    }
 
-            @Override
-            public void onDrawerClosed(View drawerView) {
-                super.onDrawerClosed(drawerView);
-                toolbar.setTitle("CLOSED");
-            }
-        };
-        drawer.setDrawerListener(toggle);
-        FragmentManager manager = getSupportFragmentManager();
-        manager.beginTransaction().replace(R.id.content, new FirstFragment()).commit();
+    private void showAddNoteMenu() {
+        Bundle bundle = new Bundle();
+        bundle.putSerializable("menu_list", menuData);
+        AddNoteDialogFragment dialogFragment = new AddNoteDialogFragment();
+        dialogFragment.setArguments(bundle);
+        dialogFragment.show(getSupportFragmentManager(), "add_dialog");
     }
 
 
@@ -80,33 +93,41 @@ public class MainActivity extends DrawerActivity {
         }
     }
 
-    private class MenuAdapter extends RecyclerView.Adapter<MenuViewHolder>
-    {
+    @Override
+    public void onCreateNoteFinished(MenuDetail detail) {
+        menuData.add(detail);
+        menuList.getAdapter().notifyDataSetChanged();
+        toolbar.setTitle(detail.getName());
+        drawer.closeDrawers();
+    }
+
+    private class MenuAdapter extends RecyclerView.Adapter<MenuViewHolder> {
         List<MenuDetail> data;
 
-        MenuAdapter(List data)
-        {
-            this.data=data;
+        MenuAdapter(List data) {
+            this.data = data;
         }
 
         @Override
         public MenuViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-            MenuViewHolder holder=null;
-            View view=null;
-            view=LayoutInflater.from(parent.getContext()).inflate(R.layout.menu_item,parent,false);
-            holder=new MenuViewHolder(view);
+            MenuViewHolder holder = null;
+            View view = null;
+            view = LayoutInflater.from(parent.getContext()).inflate(R.layout.menu_item, parent, false);
+            holder = new MenuViewHolder(view);
             return holder;
         }
 
         @Override
-        public void onBindViewHolder(MenuViewHolder holder, int position) {
-           holder.menuItem.setText(data.get(position).getId());
-           holder.menuItem.setOnClickListener(new View.OnClickListener() {
-               @Override
-               public void onClick(View v) {
-                   Snackbar.make(v,"click menu item",Snackbar.LENGTH_SHORT).show();
-               }
-           });
+        public void onBindViewHolder(MenuViewHolder holder,final int position) {
+            holder.menuItem.setText(data.get(position).getName());
+            holder.menuItem.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    showFragment(data.get(position));
+                    Snackbar.make(v, "click menu item", Snackbar.LENGTH_SHORT).show();
+                }
+            });
         }
 
         @Override
@@ -128,19 +149,6 @@ public class MainActivity extends DrawerActivity {
 
 
     @Override
-    protected void onActivityCreated() {
-        super.onActivityCreated();
-        mSocketTask.execute();
-    }
-
-    @Override
-    protected void onPostCreate(@Nullable Bundle savedInstanceState) {
-        super.onPostCreate(savedInstanceState);
-        toggle.syncState();
-
-    }
-
-    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main_menu, menu);
         return super.onCreateOptionsMenu(menu);
@@ -154,7 +162,7 @@ public class MainActivity extends DrawerActivity {
                 startActivity(logInIntent);
                 break;
             case R.id.save:
-                Snackbar.make(baseContent, R.string.save_tip, Snackbar.LENGTH_SHORT).show();
+//                Snackbar.make(baseContent, R.string.save_tip, Snackbar.LENGTH_SHORT).show();
                 break;
         }
         return super.onOptionsItemSelected(item);
@@ -170,5 +178,10 @@ public class MainActivity extends DrawerActivity {
         super.onError(message);
     }
 
+    private void showDetailFragment(MenuDetail menuDetail)
+    {
+        Fragment fragment=null;
+
+    }
 
 }
